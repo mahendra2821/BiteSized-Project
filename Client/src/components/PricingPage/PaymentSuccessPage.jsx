@@ -1,27 +1,3 @@
-// import React from "react";
-// import { useNavigate } from "react-router-dom";
-
-// export default function PaymentSuccessPage() {
-//   const navigate = useNavigate();
-
-//   return (
-//     <section className="p-8 text-center">
-//       <h2 className="text-3xl font-bold text-green-600">Payment Successful!</h2>
-//       <p className="mt-4">
-//         Thank you for registering. We’ve sent a confirmation email.
-//       </p>
-
-//       <button
-//         className="mt-6 px-6 py-2 bg-blue-600 text-white rounded"
-//         onClick={() => navigate("/registrations")}
-//       >
-//         Check Your Name in Registration List
-//       </button>
-//     </section>
-//   );
-// }
-
-
 
 
 import React from "react";

@@ -1,116 +1,3 @@
-// import React, { useState, useEffect } from "react";
-// import { motion } from "framer-motion";
-
-// export default function AuthForm({ onAuth }) {
-//   const [mode, setMode] = useState("signin");
-//   const [form, setForm] = useState({ name: "", email: "", password: "" });
-
-//   const handleSubmit = async (e) => {
-//     e.preventDefault();
-
-//     if (mode === "signin") {
-//       // LOGIN request
-//       try {
-//         const res = await fetch("http://localhost:5000/api/auth/login", {
-//           method: "POST",
-//           headers: { "Content-Type": "application/json" },
-//           body: JSON.stringify({ email: form.email, password: form.password }),
-//         });
-
-//         if (!res.ok) {
-//           const errData = await res.json();
-//           alert(errData.message || "Invalid email or password");
-//           return;
-//         }
-
-//         const data = await res.json();
-//         // Store token or user info if needed
-//         localStorage.setItem("user", JSON.stringify(data));
-//         onAuth(data); // Open welcome page
-
-//       } catch (err) {
-//         console.error("Login error:", err);
-//       }
-
-//     } else {
-//       // SIGNUP request
-//       if (!form.name) {
-//         alert("Please enter your name.");
-//         return;
-//       }
-//       try {
-//         const res = await fetch("http://localhost:5000/api/auth/signup", {
-//           method: "POST",
-//           headers: { "Content-Type": "application/json" },
-//           body: JSON.stringify(form),
-//         });
-
-//         if (!res.ok) {
-//           const errData = await res.json();
-//           alert(errData.message || "Signup failed");
-//           return;
-//         }
-
-//         alert("Account created! Please sign in.");
-//         setMode("signin");
-//       } catch (err) {
-//         console.error("Signup error:", err);
-//       }
-//     }
-//   };
-
-//   return (
-//     <motion.div
-//       initial={{ opacity: 0, y: -50 }}
-//       animate={{ opacity: 1, y: 0 }}
-//       transition={{ duration: 0.8 }}
-//       className="bg-white shadow-lg rounded-xl p-8 w-96"
-//     >
-//       <h2 className="text-2xl font-bold text-center mb-6">
-//         {mode === "signin" ? "Sign In" : "Sign Up"}
-//       </h2>
-//       <form onSubmit={handleSubmit} className="space-y-4">
-//         {mode === "signup" && (
-//           <input
-//             type="text"
-//             placeholder="Name"
-//             value={form.name}
-//             onChange={(e) => setForm({ ...form, name: e.target.value })}
-//             className="w-full p-3 border rounded-lg"
-//           />
-//         )}
-//         <input
-//           type="email"
-//           placeholder="Email"
-//           value={form.email}
-//           onChange={(e) => setForm({ ...form, email: e.target.value })}
-//           className="w-full p-3 border rounded-lg"
-//         />
-//         <input
-//           type="password"
-//           placeholder="Password"
-//           value={form.password}
-//           onChange={(e) => setForm({ ...form, password: e.target.value })}
-//           className="w-full p-3 border rounded-lg"
-//         />
-//         <button
-//           type="submit"
-//           className="w-full bg-blue-600 text-white p-3 rounded-lg hover:bg-blue-700 transition"
-//         >
-//           {mode === "signin" ? "Sign In" : "Sign Up"}
-//         </button>
-//       </form>
-//       <p
-//         className="text-center mt-4 text-sm cursor-pointer text-blue-500 hover:underline"
-//         onClick={() => setMode(mode === "signin" ? "signup" : "signin")}
-//       >
-//         {mode === "signin"
-//           ? "Don't have an account? Sign Up"
-//           : "Already have an account? Sign In"}
-//       </p>
-//     </motion.div>
-//   );
-// }
 
 
 
@@ -131,7 +18,7 @@ export default function AuthForm({ onAuth }) {
 
     if (mode === "signin") {
       try {
-        const res = await fetch("http://localhost:5000/api/auth/login", {
+        const res = await fetch("https://bitesized-backend.onrender.com/api/auth/login", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ email: form.email, password: form.password }),
@@ -155,7 +42,7 @@ export default function AuthForm({ onAuth }) {
         return;
       }
       try {
-        const res = await fetch("http://localhost:5000/api/auth/signup", {
+        const res = await fetch("https://bitesized-backend.onrender.com/api/auth/signup", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(form),

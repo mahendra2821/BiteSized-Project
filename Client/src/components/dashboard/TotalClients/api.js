@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const BASE_URL = "http://localhost:5000/api/clients"; // Change if your backend URL is different
+const BASE_URL = "https://bitesized-backend.onrender.com/api/clients"; // Change if your backend URL is different
 
 export const fetchClients = async () => {
   const res = await axios.get(BASE_URL);
